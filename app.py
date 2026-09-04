@@ -1151,14 +1151,6 @@ def render_connection():
             use_container_width=False,
         )
 
-        st.markdown(
-            """
-<div class="dm-secure">
-  🔒 Secure Session Only &nbsp;&nbsp; ◉ Never Stored &nbsp;&nbsp; ✓ You Control Your Data
-</div>
-""",
-            unsafe_allow_html=True,
-        )
 
     st.markdown("</div>", unsafe_allow_html=True)
 
