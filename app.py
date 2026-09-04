@@ -563,17 +563,26 @@ div[data-testid="stTextInput"] input:focus {
     display:flex;
     align-items:center;
     gap:9px;
-    font-size:10px;
+    font-size:15px;
     font-weight:700;
     margin-bottom:8px;
 }
 
 .dm-answer-body {
-    color:#64748b;
-    font-size:10px;
-    line-height:1.65;
+    color:#334155;
+    font-size:15px;
+    line-height:1.7;
 }
 
+/* Chat question input */
+div[data-testid="stChatInput"] textarea {
+    font-size: 15px !important;
+}
+
+div[data-testid="stChatInput"] textarea::placeholder {
+    font-size: 15px !important;
+    color: #94a3b8 !important;
+}
 .dm-sources {
     border-top:1px solid #f1f5f9;
     margin-top:10px;
@@ -1379,7 +1388,7 @@ def render_workspace():
                     f"""
 <div class="dm-question">
   <div class="dm-avatar-user">●</div>
-  <div style="font-size:10px;font-weight:700;color:#334155">{msg['content']}</div>
+  <div style="font-size:15px;font-weight:600;color:#334155;line-height:1.5">{msg['content']}</div>
 </div>
 """,
                     unsafe_allow_html=True,
@@ -1398,6 +1407,8 @@ def render_workspace():
     # ---------- Prompt ----------
     st.markdown('<div style="height:12px"></div>', unsafe_allow_html=True)
     question = st.chat_input("Ask a question about your documents...")
+
+    
 
     if question:
         st.session_state.messages.append({"role": "user", "content": question})
