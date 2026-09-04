@@ -1022,11 +1022,19 @@ def reset_workspace():
 # ============================================================
 def render_connection():
     st.markdown(
-        """
-<div class="dm-topbar"></div>
+    """
+<div class="dm-topbar">
+  <div class="dm-brand">
+    <div class="dm-logo">▤</div>
+    <div>
+      <div class="dm-brand-name">DocuMind <span>AI</span></div>
+      <div class="dm-brand-sub">Your documents. Now searchable with AI.</div>
+    </div>
+  </div>
+</div>
 """,
-        unsafe_allow_html=True,
-    )
+    unsafe_allow_html=True,
+)
 
     left, right = st.columns([1.55, 1], gap="large")
 
