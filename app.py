@@ -1078,7 +1078,6 @@ def render_connection():
   <div class="dm-doc dm-doc-center"><div class="mini-icon" style="background:#eef2ff">▤</div><small style="font-weight:700">DOCS</small></div>
   <div class="dm-doc dm-doc-right"><div class="mini-icon" style="background:#eff6ff">📘</div><small>DOCX</small></div>
   <div class="dm-doc dm-doc-far-right"><div class="mini-icon" style="background:#fff7ed">📙</div><small>PPTX</small></div>
-  <div class="dm-tagline">“Turn your documents into knowledge.”</div>
 </div>
 """,
             unsafe_allow_html=True,
