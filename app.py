@@ -116,7 +116,7 @@ div[data-testid="stTextInput"] input:focus {
 }
 
 .dm-auth-page {
-    min-height: 82vh;
+    min-height: 0vh;
     padding: 28px 42px 38px;
     border: 1px solid rgba(255,255,255,.85);
     border-radius: 30px;
@@ -132,7 +132,7 @@ div[data-testid="stTextInput"] input:focus {
     justify-content:space-between;
     align-items:center;
     gap:20px;
-    margin-bottom:45px;
+    margin-bottom:22px;
 }
 
 .dm-brand {
@@ -178,11 +178,11 @@ div[data-testid="stTextInput"] input:focus {
 }
 
 .dm-hero-title {
-    font-size:clamp(40px,4.3vw,58px);
-    line-height:1.12;
-    letter-spacing:-2.6px;
+    font-size:clamp(38px,3.7vw,52px);
+    line-height:1.08;
+    letter-spacing:-2.3px;
     font-weight:800;
-    margin:0 0 18px;
+    margin:0 0 12px;
 }
 
 .dm-gradient {
@@ -194,10 +194,10 @@ div[data-testid="stTextInput"] input:focus {
 
 .dm-hero-copy {
     color:#64748b;
-    font-size:15px;
-    line-height:1.75;
-    max-width:620px;
-    margin-bottom:18px;
+    font-size:14px;
+    line-height:1.55;
+    max-width:600px;
+    margin-bottom:12px;
 }
 
 .dm-badge {
@@ -211,7 +211,7 @@ div[data-testid="stTextInput"] input:focus {
     font-weight:800;
     letter-spacing:1px;
     text-transform:uppercase;
-    margin-bottom:20px;
+    margin-bottom:14px;
 }
 
 .dm-features {
@@ -243,7 +243,7 @@ div[data-testid="stTextInput"] input:focus {
 
 .dm-showcase {
     position:relative;
-    height:190px;
+    height:145px;
     max-width:610px;
     margin-top:0;
 }
@@ -252,16 +252,14 @@ div[data-testid="stTextInput"] input:focus {
     position:absolute;
     left:5%;
     right:5%;
-    top:8px;
-    height:150px;
-    border:1px dashed #c7d2fe;
-    border-radius:50%;
+    top:5px;
+    height:115px;
 }
 
 .dm-doc {
     position:absolute;
-    width:105px;
-    height:120px;
+    width:92px;
+    height:105px;
     border-radius:12px;
     background:#fff;
     border:1px solid #e2e8f0;
@@ -285,19 +283,41 @@ div[data-testid="stTextInput"] input:focus {
 
 .dm-doc-center {
     left:50%;
-    top:20px;
+    top:12px;
     transform:translateX(-50%);
-    width:110px;
-    height:130px;
+    width:100px;
+    height:115px;
     z-index:4;
     box-shadow:0 20px 35px -8px rgba(79,70,229,.22);
 }
 
-.dm-doc-left { left:22%; top:62px; transform:rotate(-10deg); z-index:2; }
-.dm-doc-right { right:22%; top:62px; transform:rotate(10deg); z-index:2; }
+.dm-doc-left {
+    left:22%;
+    top:48px;
+    transform:rotate(-10deg);
+    z-index:2;
+}
 
-.dm-doc-far-left { left:8%; top:82px; transform:rotate(-17deg); z-index:1; }
-.dm-doc-far-right { right:8%; top:82px; transform:rotate(17deg); z-index:1; }
+.dm-doc-right {
+    right:22%;
+    top:48px;
+    transform:rotate(10deg);
+    z-index:2;
+}
+
+.dm-doc-far-left {
+    left:8%;
+    top:62px;
+    transform:rotate(-17deg);
+    z-index:1;
+}
+
+.dm-doc-far-right {
+    right:8%;
+    top:62px;
+    transform:rotate(17deg);
+    z-index:1;
+}
 
 .dm-tagline {
     position:absolute;
@@ -314,29 +334,29 @@ div[data-testid="stTextInput"] input:focus {
 .dm-auth-card {
     background:#fff;
     border:1px solid #eef2f7;
-    border-radius:30px;
-    padding:35px;
+    border-radius:26px;
+    padding:24px;
     box-shadow:0 20px 40px -15px rgba(0,15,60,.08);
     max-width:430px;
     margin:0 auto;
 }
 
 .dm-lock {
-    width:56px;
-    height:56px;
+    width:48px;
+    height:48px;
     border-radius:17px;
     display:flex;
     align-items:center;
     justify-content:center;
     background:#eef2ff;
     color:#4f46e5;
-    margin:0 auto 18px;
+    margin:0 auto 12px;
     font-size:22px;
 }
 
 .dm-auth-title {
     text-align:center;
-    font-size:25px;
+    font-size:22px;
     font-weight:800;
     letter-spacing:-.8px;
     margin-bottom:8px;
@@ -344,10 +364,10 @@ div[data-testid="stTextInput"] input:focus {
 
 .dm-auth-copy {
     color:#64748b;
-    font-size:12px;
-    line-height:1.7;
+    font-size:11px;
+    line-height:1.55;
     text-align:center;
-    margin:0 auto 22px;
+    margin:0 auto 14px;
     max-width:310px;
 }
 
@@ -646,6 +666,54 @@ div[data-testid="stChatInput"] textarea::placeholder {
     .dm-center-title { font-size:28px; }
     .dm-workspace-trust { display:none; }
 }
+
+/* ============================================================
+   DESKTOP VIEWPORT FIT — 100% SCREEN
+   ============================================================ */
+
+@media (min-width: 901px) {
+
+    html,
+    body {
+        overflow: hidden !important;
+    }
+
+    .stApp {
+        min-height: 100vh;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    [data-testid="stAppViewContainer"] {
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    [data-testid="stMainBlockContainer"] {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .block-container {
+        max-width: 1440px;
+        height: 100vh;
+        min-height: 0;
+        padding: 8px 1.4rem 8px !important;
+        margin: 0 auto !important;
+    }
+
+    .dm-topbar {
+        margin-bottom: 18px;
+    }
+
+    .dm-auth-page {
+        min-height: 0;
+        height: calc(100vh - 16px);
+        padding: 18px 32px 18px;
+        box-sizing: border-box;
+    }
+}
+
 </style>
 """,
     unsafe_allow_html=True,
