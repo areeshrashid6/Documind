@@ -759,13 +759,79 @@ def parse_excel(data: bytes, name: str) -> List[Dict[str, Any]]:
 
 
 def parse_csv(data: bytes) -> List[Dict[str, Any]]:
-    df = pd.read_csv(io.BytesIO(data))
-    lines = []
+    """
+    Robust CSV parser.
+
+    Handles common UTF-8/UTF-8-SIG/Latin-1 files and automatically
+    detects comma/semicolon/tab separators where possible.  The extracted
+    text explicitly includes the CSV columns and row numbers so RAG
+    retrieval can answer questions about the dataset more reliably.
+    """
+    if not data:
+        return []
+
+    # Try common encodings first.  This prevents valid CSV files with a BOM
+    # or non-UTF-8 characters from silently failing.
+    decoded = None
+    for encoding in ("utf-8-sig", "utf-8", "cp1252", "latin-1"):
+        try:
+            decoded = data.decode(encoding)
+            break
+        except UnicodeDecodeError:
+            continue
+
+    if decoded is None:
+        decoded = data.decode("utf-8", errors="replace")
+
+    # Detect the delimiter instead of assuming comma.
+    delimiter = ","
+    try:
+        sample = decoded[:8192]
+        dialect = __import__("csv").Sniffer().sniff(sample, delimiters=",;\\t|")
+        delimiter = dialect.delimiter
+    except Exception:
+        pass
+
+    try:
+        df = pd.read_csv(
+            io.StringIO(decoded),
+            sep=delimiter,
+            engine="python",
+            on_bad_lines="skip",
+        )
+    except Exception:
+        # Final fallback for unusual CSVs.
+        df = pd.read_csv(
+            io.StringIO(decoded),
+            engine="python",
+            on_bad_lines="skip",
+        )
+
+    if df.empty and len(df.columns) == 0:
+        return []
+
+    # Normalize column names so the model receives useful field labels.
+    df.columns = [
+        str(col).strip() if str(col).strip() else f"Column {i + 1}"
+        for i, col in enumerate(df.columns)
+    ]
+
+    lines = [
+        "CSV DOCUMENT",
+        f"Columns: {', '.join(str(c) for c in df.columns)}",
+        f"Rows: {len(df)}",
+    ]
+
     for idx, row in df.iterrows():
-        vals = [f"{col}: {value}" for col, value in row.items() if pd.notna(value)]
+        vals = []
+        for col, value in row.items():
+            if pd.notna(value):
+                vals.append(f"{col}: {value}")
         if vals:
             lines.append(f"Row {idx + 2}: " + " | ".join(vals))
-    return [{"text": "\n".join(lines), "page": None}] if lines else []
+
+    text = "\n".join(lines).strip()
+    return [{"text": text, "page": None, "rows": len(df)}] if text else []
 
 
 def parse_text(data: bytes) -> List[Dict[str, Any]]:
@@ -788,7 +854,7 @@ def parse_uploaded_file(uploaded) -> List[Dict[str, Any]]:
         return parse_excel(data, name)
     if ext == "csv":
         return parse_csv(data)
-    if ext in {"txt", "md"}:
+    if ext in {"txt", "md", "py", "json", "html", "htm", "xml", "rtf"}:
         return parse_text(data)
 
     # Image OCR is intentionally optional so Streamlit Cloud remains easy
@@ -816,6 +882,7 @@ def build_chunks(files: List[Any]) -> List[Dict[str, Any]]:
                     "page": item.get("page"),
                     "sheet": item.get("sheet"),
                     "slide": item.get("slide"),
+                    "rows": item.get("rows"),
                     "signature": signature,
                     "preview": piece[:500],
                 }
@@ -881,10 +948,20 @@ def answer_question(question: str) -> tuple[str, List[Dict[str, Any]]]:
         history.append({"role": msg["role"], "content": msg["content"]})
 
     system = """You are DocuMind AI, a document-grounded assistant.
+
 Answer using ONLY the supplied document context.
-If the answer is not supported by the context, say you don't know based on the uploaded documents.
-Do not invent facts, citations, pages, values, or sources.
-Keep the answer concise and useful.
+
+Important rules:
+1. Treat the retrieved context as the source of truth.
+2. Never invent facts, values, citations, pages, rows, sheets, slides, or sources.
+3. If the user asks "what is this file?", "what is this dataset?", "what is this document about?",
+   or a similar question, summarize what can be inferred directly from the document title,
+   columns, headings, labels, and retrieved content.
+4. For CSV/spreadsheet questions, use the column names and row values provided in the context.
+5. If the requested information genuinely does not appear in the context, say:
+   "I don't know based on the uploaded documents."
+6. Do not reject an answer merely because the exact wording of the question is not present.
+7. Keep the answer concise and useful.
 """
 
     response = st.session_state.client.chat.completions.create(
@@ -1095,7 +1172,11 @@ def render_workspace():
 
         uploaded = st.file_uploader(
             "Add more files",
-            type=["pdf", "docx", "doc", "xlsx", "xls", "csv", "pptx", "ppt", "txt", "md"],
+            type=[
+                "pdf", "docx", "doc", "xlsx", "xls", "csv",
+                "pptx", "ppt", "txt", "md", "py", "json",
+                "html", "htm", "xml", "rtf"
+            ],
             accept_multiple_files=True,
             label_visibility="collapsed",
         )
