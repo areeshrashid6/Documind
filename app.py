@@ -334,11 +334,13 @@ div[data-testid="stTextInput"] input:focus {
 .dm-auth-card {
     background:#fff;
     border:1px solid #eef2f7;
-    border-radius:26px;
-    padding:24px;
+    border-radius:30px;
+    padding:35px;
     box-shadow:0 20px 40px -15px rgba(0,15,60,.08);
     max-width:430px;
     margin:0 auto;
+    position:relative;
+    top:-35px;
 }
 
 .dm-lock {
