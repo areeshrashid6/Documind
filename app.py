@@ -70,13 +70,12 @@ html, body, [class*="css"] {
     margin-top: 0 !important;
 }
 
-section[data-testid="stSidebar"] {
-    background: #ffffff;
-    border-right: 1px solid rgba(226,232,240,.85);
+section[data-testid="stSidebar"] > div {
+    padding: 0.5rem 1.25rem 1.25rem;
 }
 
-section[data-testid="stSidebar"] > div {
-    padding: 1.25rem;
+section[data-testid="stSidebarUserContent"] {
+    padding-top: 0 !important;
 }
 
 div[data-testid="stFileUploader"] {
@@ -393,8 +392,9 @@ div[data-testid="stTextInput"] input:focus {
 
 .dm-workspace-sub {
     color:#94a3b8;
-    font-size:10px;
-    margin-top:2px;
+    font-size:12px;
+    line-height:1.4;
+    margin-top:3px;
 }
 
 .dm-workspace-trust {
@@ -460,18 +460,23 @@ div[data-testid="stTextInput"] input:focus {
 }
 
 .dm-stat-icon {
-    width:39px;
-    height:39px;
-    border-radius:11px;
+    width:43px;
+    height:43px;
+    border-radius:12px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:15px;
+    font-size:18px;
     flex:0 0 auto;
 }
 
 .dm-stat-number { font-size:19px; font-weight:800; line-height:1; }
-.dm-stat-label { font-size:9px; color:#94a3b8; margin-top:4px; }
+.dm-stat-label {
+    font-size:14px;
+    color:#94a3b8;
+    margin-top:5px;
+    line-height:1.2;
+}
 .dm-stat-status { font-size:13px; font-weight:800; line-height:1; }
 
 .dm-file-row {
@@ -494,7 +499,7 @@ div[data-testid="stTextInput"] input:focus {
 }
 
 .dm-file-name {
-    font-size:10px;
+    font-size:13px;
     font-weight:700;
     color:#334155;
     white-space:nowrap;
@@ -504,12 +509,12 @@ div[data-testid="stTextInput"] input:focus {
 
 .dm-file-meta {
     color:#94a3b8;
-    font-size:9px;
+    font-size:11px;
 }
 
 .dm-file-status {
     color:#16a34a;
-    font-size:9px;
+    font-size:14px;
     font-weight:700;
     white-space:nowrap;
 }
@@ -526,8 +531,8 @@ div[data-testid="stTextInput"] input:focus {
 }
 
 .dm-avatar-user {
-    width:27px;
-    height:27px;
+    width:31px;
+    height:31px;
     border-radius:50%;
     background:#ef4444;
     color:#fff;
@@ -547,8 +552,8 @@ div[data-testid="stTextInput"] input:focus {
 }
 
 .dm-avatar-ai {
-    width:27px;
-    height:27px;
+    width:31px;
+    height:31px;
     border-radius:50%;
     background:#f59e0b;
     color:#fff;
@@ -563,14 +568,14 @@ div[data-testid="stTextInput"] input:focus {
     display:flex;
     align-items:center;
     gap:9px;
-    font-size:15px;
+    font-size:12px;
     font-weight:700;
-    margin-bottom:8px;
+    margin-bottom:9px;
 }
 
 .dm-answer-body {
-    color:#334155;
-    font-size:15px;
+    color:#475569;
+    font-size:13px;
     line-height:1.7;
 }
 
@@ -659,6 +664,7 @@ defaults = {
     "chunks": [],
     "embeddings": None,
     "messages": [],
+    "upload_key": 0,
     "settings": {
         "chunk_size": 500,
         "chunk_overlap": 50,
@@ -1008,6 +1014,7 @@ def reset_workspace():
     st.session_state.chunks = []
     st.session_state.embeddings = None
     st.session_state.messages = []
+    st.session_state.last_sources = []
 
 
 # ============================================================
@@ -1193,15 +1200,12 @@ def render_workspace():
         st.markdown("**Upload files**")
 
         uploaded = st.file_uploader(
-            "Add more files",
-            type=[
-                "pdf", "docx", "doc", "xlsx", "xls", "csv",
-                "pptx", "ppt", "txt", "md", "py", "json",
-                "html", "htm", "xml", "rtf"
-            ],
-            accept_multiple_files=True,
-            label_visibility="collapsed",
-        )
+           "Add more files",
+           type=["pdf", "docx", "doc", "xlsx", "xls", "csv", "pptx", "ppt", "txt", "md"],
+           accept_multiple_files=True,
+           label_visibility="collapsed",
+           key=f"document_uploader_{st.session_state.upload_key}",
+)
 
         if uploaded:
             existing = {d["signature"] for d in st.session_state.documents}
@@ -1267,9 +1271,10 @@ def render_workspace():
         st.caption(f"Model: {st.session_state.model}")
         st.caption("Embeddings: text-embedding-3-small")
 
-        if st.button("⌫  Clear documents", use_container_width=True):
-            reset_workspace()
-            st.rerun()
+        if st.button("Clear documents", use_container_width=True):
+    reset_workspace()
+    st.session_state.upload_key += 1
+    st.rerun()
 
     # ---------- Header ----------
     st.markdown(
@@ -1388,7 +1393,7 @@ def render_workspace():
                     f"""
 <div class="dm-question">
   <div class="dm-avatar-user">●</div>
-  <div style="font-size:15px;font-weight:600;color:#334155;line-height:1.5">{msg['content']}</div>
+  <div style="font-size:15px;font-weight:700;color:#334155;line-height:1.5">{msg['content']}</div>
 </div>
 """,
                     unsafe_allow_html=True,
