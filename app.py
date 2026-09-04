@@ -340,7 +340,7 @@ div[data-testid="stTextInput"] input:focus {
     max-width:430px;
     margin:0 auto;
     position:top;
-    top:-25px;
+    top:-75px;
 }
 
 .dm-lock {
