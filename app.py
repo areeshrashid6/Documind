@@ -676,7 +676,7 @@ div[data-testid="stChatInput"] textarea::placeholder {
 
     /* Move the entire right-side connection section upward */
     div[data-testid="column"]:has(.dm-auth-card) {
-        transform: translateY(-35px);
+        transform: translateY(-55px);
     }
 
 }
