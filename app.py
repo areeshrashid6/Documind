@@ -1272,9 +1272,9 @@ def render_workspace():
         st.caption("Embeddings: text-embedding-3-small")
 
         if st.button("Clear documents", use_container_width=True):
-    reset_workspace()
-    st.session_state.upload_key += 1
-    st.rerun()
+            reset_workspace()
+            st.session_state.upload_key += 1
+            st.rerun()
 
     # ---------- Header ----------
     st.markdown(
