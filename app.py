@@ -115,16 +115,18 @@ div[data-testid="stTextInput"] input:focus {
     box-shadow: 0 0 0 2px rgba(99,91,255,.10);
 }
 
+
+/* ---------- FIRST PAGE / CONNECTION SCREEN ---------- */
 .dm-auth-page {
-    min-height: 82vh;
-    padding: 28px 42px 38px;
-    border: 1px solid rgba(255,255,255,.85);
-    border-radius: 30px;
+    min-height: 0;
+    padding: 18px 28px 22px;
+    border: 1px solid rgba(255,255,255,.95);
+    border-radius: 18px;
     background:
-        radial-gradient(circle at 15% 15%, #f1f4ff 0%, #f8faff 45%, #eff2fe 100%);
+        radial-gradient(circle at 8% 8%, #eef2ff 0%, #f7f9ff 48%, #eef2fb 100%);
     box-shadow:
-        0 25px 60px -15px rgba(67,56,202,.08),
-        0 0 0 1px rgba(255,255,255,.8) inset;
+        0 18px 45px -18px rgba(67,56,202,.12),
+        0 0 0 1px rgba(255,255,255,.75) inset;
 }
 
 .dm-topbar {
@@ -132,451 +134,294 @@ div[data-testid="stTextInput"] input:focus {
     justify-content:space-between;
     align-items:center;
     gap:20px;
-    margin-bottom:45px;
+    margin-bottom:27px;
 }
 
 .dm-brand {
     display:flex;
     align-items:center;
-    gap:13px;
+    gap:9px;
 }
 
 .dm-logo {
-    width:48px;
-    height:48px;
-    border-radius:16px;
-    background:linear-gradient(135deg,#2563eb,#6366f1,#8b5cf6);
+    width:34px;
+    height:34px;
+    border-radius:9px;
+    background:linear-gradient(145deg,#5b5cf0,#6455e8);
     display:flex;
     align-items:center;
     justify-content:center;
     color:#fff;
-    font-size:22px;
+    font-size:16px;
     font-weight:800;
-    box-shadow:0 10px 25px rgba(99,91,255,.20);
+    box-shadow:0 7px 16px rgba(99,91,255,.18);
 }
 
 .dm-brand-name {
-    font-size:20px;
+    font-size:13px;
     line-height:1;
     font-weight:800;
-    letter-spacing:-.6px;
+    letter-spacing:-.35px;
 }
 
-.dm-brand-name span { color:var(--indigo); }
+.dm-brand-name span { color:#635BFF; }
 
 .dm-brand-sub {
-    color:#94a3b8;
-    font-size:11px;
-    margin-top:5px;
+    color:#9aa6bb;
+    font-size:7px;
+    margin-top:3px;
     font-weight:500;
 }
 
 .dm-trust {
-    color:#64748b;
-    font-size:11px;
+    color:#8b97aa;
+    font-size:7px;
     font-weight:500;
 }
 
 .dm-hero-title {
-    font-size:clamp(40px,4.3vw,58px);
-    line-height:1.12;
-    letter-spacing:-2.6px;
+    font-size:clamp(31px,3.2vw,43px);
+    line-height:1.03;
+    letter-spacing:-1.9px;
     font-weight:800;
-    margin:0 0 18px;
+    margin:0 0 11px;
 }
 
 .dm-gradient {
-    background:linear-gradient(135deg,#2563eb 0%,#6366f1 70%,#8b5cf6 100%);
+    background:linear-gradient(135deg,#2563eb 0%,#6366f1 58%,#8b5cf6 100%);
     -webkit-background-clip:text;
     background-clip:text;
     -webkit-text-fill-color:transparent;
 }
 
 .dm-hero-copy {
-    color:#64748b;
-    font-size:15px;
-    line-height:1.75;
-    max-width:620px;
-    margin-bottom:18px;
+    color:#758196;
+    font-size:9px;
+    line-height:1.55;
+    max-width:330px;
+    margin-bottom:13px;
 }
 
 .dm-badge {
     display:inline-block;
-    padding:7px 13px;
+    padding:5px 9px;
     border-radius:999px;
-    color:#4f46e5;
-    background:#eef2ff;
-    border:1px solid #e0e7ff;
-    font-size:10px;
+    color:#5b5fe8;
+    background:#eef0ff;
+    border:1px solid #e2e5ff;
+    font-size:6px;
     font-weight:800;
-    letter-spacing:1px;
+    letter-spacing:.65px;
     text-transform:uppercase;
-    margin-bottom:20px;
+    margin-bottom:11px;
 }
 
 .dm-features {
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:10px;
-    max-width:640px;
-    margin-bottom:18px;
+    gap:6px;
+    max-width:340px;
+    margin-bottom:8px;
 }
 
 .dm-feature {
     display:flex;
     flex-direction:column;
-    gap:8px;
-    color:#334155;
-    font-size:11px;
+    gap:4px;
+    color:#58657a;
+    font-size:6px;
     font-weight:700;
 }
 
 .dm-feature-icon {
-    width:38px;
-    height:38px;
-    border-radius:12px;
+    width:20px;
+    height:20px;
+    border-radius:6px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:16px;
+    font-size:9px;
 }
 
 .dm-showcase {
     position:relative;
-    height:190px;
-    max-width:610px;
+    height:145px;
+    max-width:365px;
     margin-top:0;
 }
 
 .dm-arc {
     position:absolute;
-    left:5%;
-    right:5%;
-    top:8px;
-    height:150px;
-    border:1px dashed #c7d2fe;
+    left:4%;
+    right:4%;
+    top:6px;
+    height:108px;
+    border:1px dashed #cbd5ff;
     border-radius:50%;
 }
 
 .dm-doc {
     position:absolute;
-    width:105px;
-    height:120px;
-    border-radius:12px;
+    width:58px;
+    height:70px;
+    border-radius:8px;
     background:#fff;
-    border:1px solid #e2e8f0;
-    box-shadow:0 12px 28px -6px rgba(45,55,72,.12);
+    border:1px solid #e7ebf3;
+    box-shadow:0 9px 20px -7px rgba(45,55,72,.14);
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    gap:10px;
+    gap:5px;
 }
 
 .dm-doc .mini-icon {
-    width:42px;
-    height:50px;
-    border-radius:8px;
+    width:25px;
+    height:30px;
+    border-radius:5px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:24px;
+    font-size:13px;
+}
+
+.dm-doc small {
+    font-size:6px;
+    color:#64748b;
 }
 
 .dm-doc-center {
     left:50%;
-    top:20px;
+    top:18px;
     transform:translateX(-50%);
-    width:110px;
-    height:130px;
+    width:72px;
+    height:84px;
     z-index:4;
-    box-shadow:0 20px 35px -8px rgba(79,70,229,.22);
+    box-shadow:0 14px 26px -7px rgba(79,70,229,.22);
 }
 
-.dm-doc-left { left:22%; top:62px; transform:rotate(-10deg); z-index:2; }
-.dm-doc-right { right:22%; top:62px; transform:rotate(10deg); z-index:2; }
-
-.dm-doc-far-left { left:8%; top:82px; transform:rotate(-17deg); z-index:1; }
-.dm-doc-far-right { right:8%; top:82px; transform:rotate(17deg); z-index:1; }
+.dm-doc-left { left:25%; top:48px; transform:rotate(-9deg); z-index:2; }
+.dm-doc-right { right:25%; top:48px; transform:rotate(9deg); z-index:2; }
+.dm-doc-far-left { left:10%; top:63px; transform:rotate(-14deg); z-index:1; }
+.dm-doc-far-right { right:10%; top:63px; transform:rotate(14deg); z-index:1; }
 
 .dm-tagline {
     position:absolute;
-    left:12%;
-    right:12%;
-    bottom:5px;
+    left:8%;
+    right:8%;
+    bottom:0;
     text-align:center;
-    color:#64748b;
-    font-size:12px;
+    color:#8793a8;
+    font-size:7px;
     font-style:italic;
     font-weight:600;
 }
 
-.dm-auth-card {
+/* Actual Streamlit connection card */
+.st-key-auth_card {
     background:#fff;
-    border:1px solid #eef2f7;
-    border-radius:30px;
-    padding:35px;
-    box-shadow:0 20px 40px -15px rgba(0,15,60,.08);
-    max-width:430px;
+    border:1px solid #edf0f6;
+    border-radius:20px;
+    padding:23px 21px 18px;
+    box-shadow:0 16px 32px -15px rgba(0,15,60,.12);
+    max-width:250px;
     margin:0 auto;
 }
 
+.st-key-auth_card div[data-testid="stTextInput"] label,
+.st-key-auth_card div[data-testid="stSelectbox"] label {
+    font-size:7px !important;
+    font-weight:700 !important;
+    color:#68758a !important;
+    margin-bottom:3px !important;
+}
+
+.st-key-auth_card div[data-testid="stTextInput"] input {
+    height:29px !important;
+    min-height:29px !important;
+    font-size:8px !important;
+    padding:5px 9px !important;
+    border-radius:7px !important;
+    background:#f8fafc !important;
+    border:1px solid #e5eaf2 !important;
+}
+
+.st-key-auth_card div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+    min-height:29px !important;
+    height:29px !important;
+    font-size:8px !important;
+    border-radius:7px !important;
+    background:#f8fafc !important;
+    border:1px solid #e5eaf2 !important;
+}
+
+.st-key-auth_card .stButton > button {
+    min-height:29px !important;
+    height:29px !important;
+    padding:4px 9px !important;
+    border:0 !important;
+    border-radius:7px !important;
+    background:linear-gradient(90deg,#5a45e8,#387ff2) !important;
+    color:#fff !important;
+    font-size:8px !important;
+    font-weight:700 !important;
+    box-shadow:0 7px 13px rgba(83,75,231,.18);
+}
+
+.st-key-auth_card .stCaption {
+    font-size:6px !important;
+    color:#a0aabc !important;
+}
+
 .dm-lock {
-    width:56px;
-    height:56px;
-    border-radius:17px;
+    width:34px;
+    height:34px;
+    border-radius:10px;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:#eef2ff;
-    color:#4f46e5;
-    margin:0 auto 18px;
-    font-size:22px;
+    background:#eef0ff;
+    color:#5b55e9;
+    margin:0 auto 10px;
+    font-size:14px;
 }
 
 .dm-auth-title {
     text-align:center;
-    font-size:25px;
+    font-size:15px;
     font-weight:800;
-    letter-spacing:-.8px;
-    margin-bottom:8px;
+    letter-spacing:-.45px;
+    margin-bottom:5px;
 }
 
 .dm-auth-copy {
-    color:#64748b;
-    font-size:12px;
-    line-height:1.7;
+    color:#8994a7;
+    font-size:7px;
+    line-height:1.55;
     text-align:center;
-    margin:0 auto 22px;
-    max-width:310px;
+    margin:0 auto 12px;
+    max-width:190px;
 }
 
 .dm-secure {
     text-align:center;
-    color:#94a3b8;
-    font-size:10px;
-    margin-top:8px;
-}
-
-.dm-workspace-head {
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:18px;
-    padding:3px 2px 18px;
-}
-
-.dm-workspace-brand {
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
-
-.dm-small-logo {
-    width:32px;
-    height:32px;
-    border-radius:9px;
-    background:#635BFF;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:15px;
-}
-
-.dm-workspace-name {
-    font-size:17px;
-    font-weight:800;
-    letter-spacing:-.5px;
-}
-
-.dm-workspace-sub {
-    color:#94a3b8;
-    font-size:12px;
-    line-height:1.4;
-    margin-top:3px;
-}
-
-.dm-workspace-trust {
-    color:#94a3b8;
-    font-size:10px;
-}
-
-.dm-pill {
-    display:inline-block;
-    padding:6px 11px;
-    border-radius:999px;
-    color:#4f46e5;
-    background:#f3f1ff;
-    border:1px solid #e7e3ff;
-    font-size:10px;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:.7px;
-}
-
-.dm-center-title {
-    text-align:center;
-    font-size:35px;
-    font-weight:800;
-    letter-spacing:-1.6px;
-    margin:12px 0 5px;
-}
-
-.dm-center-copy {
-    text-align:center;
-    color:#64748b;
-    font-size:12px;
-    margin-bottom:18px;
-}
-
-.dm-banner {
-    background:#ebf9f1;
-    border:1px solid #bff0d4;
-    border-radius:11px;
-    padding:9px 13px;
-    color:#166534;
-    font-size:10px;
-    font-weight:600;
-    margin-bottom:15px;
-}
-
-.dm-stat-grid {
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:10px;
-    margin:12px 0 16px;
-}
-
-.dm-stat {
-    background:#fff;
-    border:1px solid #e2e8f0;
-    border-radius:15px;
-    padding:13px;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    box-shadow:0 3px 10px rgba(15,23,42,.025);
-}
-
-.dm-stat-icon {
-    width:43px;
-    height:43px;
-    border-radius:12px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:18px;
-    flex:0 0 auto;
-}
-
-.dm-stat-number { font-size:19px; font-weight:800; line-height:1; }
-.dm-stat-label {
-    font-size:14px;
-    color:#94a3b8;
-    margin-top:5px;
-    line-height:1.2;
-}
-.dm-stat-status { font-size:13px; font-weight:800; line-height:1; }
-
-.dm-file-row {
-    background:#fff;
-    border:1px solid #e2e8f0;
-    border-radius:11px;
-    padding:10px 12px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:12px;
-    margin-bottom:8px;
-}
-
-.dm-file-main {
-    display:flex;
-    align-items:center;
-    gap:8px;
-    min-width:0;
-}
-
-.dm-file-name {
-    font-size:13px;
-    font-weight:700;
-    color:#334155;
-    white-space:nowrap;
-    overflow:hidden;
-    text-overflow:ellipsis;
-}
-
-.dm-file-meta {
-    color:#94a3b8;
-    font-size:11px;
-}
-
-.dm-file-status {
-    color:#16a34a;
-    font-size:14px;
-    font-weight:700;
-    white-space:nowrap;
-}
-
-.dm-question {
-    background:#fff;
-    border:1px solid #e2e8f0;
-    border-radius:11px;
-    padding:12px;
-    display:flex;
-    align-items:center;
-    gap:10px;
+    color:#a0aabc;
+    font-size:6px;
     margin-top:9px;
 }
 
-.dm-avatar-user {
-    width:31px;
-    height:31px;
-    border-radius:50%;
-    background:#ef4444;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:12px;
-    flex:0 0 auto;
+@media (max-width: 900px) {
+    .dm-auth-page { padding:18px; }
+    .dm-trust { display:none; }
 }
 
-.dm-answer {
-    background:#fff;
-    border:1px solid #e2e8f0;
-    border-radius:11px;
-    padding:13px;
-    margin-top:8px;
-}
-
-.dm-avatar-ai {
-    width:31px;
-    height:31px;
-    border-radius:50%;
-    background:#f59e0b;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:12px;
-    flex:0 0 auto;
-}
-
-.dm-answer-head {
-    display:flex;
-    align-items:center;
-    gap:9px;
-    font-size:12px;
-    font-weight:700;
-    margin-bottom:9px;
-}
-
-.dm-answer-body {
-    color:#475569;
-    font-size:13px;
-    line-height:1.7;
+@media (max-width: 620px) {
+    .block-container { padding: .5rem .7rem 1rem; }
+    .dm-auth-page { padding:14px; border-radius:15px; }
+    .dm-topbar { margin-bottom:20px; }
+    .dm-hero-title { font-size:32px; letter-spacing:-1.5px; }
+    .dm-showcase { transform:scale(.9); transform-origin:top center; margin-bottom:-15px; }
+    .st-key-auth_card { max-width:none; }
 }
 
 /* Chat question input */
@@ -1022,7 +867,7 @@ def reset_workspace():
 # ============================================================
 def render_connection():
     st.markdown(
-    """
+        """
 <div class="dm-topbar">
   <div class="dm-brand">
     <div class="dm-logo">▤</div>
@@ -1031,24 +876,27 @@ def render_connection():
       <div class="dm-brand-sub">Your documents. Now searchable with AI.</div>
     </div>
   </div>
+  <div class="dm-trust">♙ Secure &nbsp;•&nbsp; Private &nbsp;•&nbsp; Powered by OpenAI</div>
 </div>
 """,
-    unsafe_allow_html=True,
-)
+        unsafe_allow_html=True,
+    )
 
-    left, right = st.columns([1.55, 1], gap="large")
+    left, right = st.columns([1.55, 0.92], gap="medium")
 
     with left:
         st.markdown(
             """
 <div class="dm-badge">AI Document Intelligence</div>
+
 <div class="dm-hero-title">
   Your documents.<br>
-  <span class="dm-gradient">Now searchable with AI.</span>
+  <span class="dm-gradient">Now searchable with<br>AI.</span>
 </div>
+
 <div class="dm-hero-copy">
-  Upload documents, spreadsheets, presentations and images, then ask
-  questions using natural language.
+  Upload documents, spreadsheets, presentations and images, then
+  ask questions using natural language.
 </div>
 
 <div class="dm-features">
@@ -1072,11 +920,32 @@ def render_connection():
 
 <div class="dm-showcase">
   <div class="dm-arc"></div>
-  <div class="dm-doc dm-doc-far-left"><div class="mini-icon" style="background:#fff1f2">📕</div><small>PDF</small></div>
-  <div class="dm-doc dm-doc-left"><div class="mini-icon" style="background:#ecfdf5">📊</div><small>XLSX</small></div>
-  <div class="dm-doc dm-doc-center"><div class="mini-icon" style="background:#eef2ff">▤</div><small style="font-weight:700">DOCS</small></div>
-  <div class="dm-doc dm-doc-right"><div class="mini-icon" style="background:#eff6ff">📘</div><small>DOCX</small></div>
-  <div class="dm-doc dm-doc-far-right"><div class="mini-icon" style="background:#fff7ed">📙</div><small>PPTX</small></div>
+
+  <div class="dm-doc dm-doc-far-left">
+    <div class="mini-icon" style="background:#fff1f2">📕</div>
+    <small>PDF</small>
+  </div>
+
+  <div class="dm-doc dm-doc-left">
+    <div class="mini-icon" style="background:#ecfdf5">📊</div>
+    <small>XLSX</small>
+  </div>
+
+  <div class="dm-doc dm-doc-center">
+    <div class="mini-icon" style="background:#eef2ff;color:#4f46e5">▤</div>
+    <small style="font-weight:700">DOCS</small>
+  </div>
+
+  <div class="dm-doc dm-doc-right">
+    <div class="mini-icon" style="background:#eff6ff">📘</div>
+    <small>DOCX</small>
+  </div>
+
+  <div class="dm-doc dm-doc-far-right">
+    <div class="mini-icon" style="background:#fff7ed">📙</div>
+    <small>PPTX</small>
+  </div>
+
   <div class="dm-tagline">“Turn your documents into knowledge.”</div>
 </div>
 """,
@@ -1084,81 +953,89 @@ def render_connection():
         )
 
     with right:
-        st.markdown(
-            """
-<div class="dm-auth-card">
-  <div class="dm-lock">♙</div>
-  <div class="dm-auth-title">Connect to OpenAI</div>
-  <div class="dm-auth-copy">
-    Enter your OpenAI API key and select a model to get started.
-    Your API key is kept only in this session and is not stored.
-  </div>
+        # Real Streamlit widgets are now inside the same styled container,
+        # so the first page visually matches the screenshot instead of
+        # showing the inputs outside the white card.
+        with st.container(key="auth_card"):
+            st.markdown('<div class="dm-lock">♙</div>', unsafe_allow_html=True)
+
+            st.markdown(
+                '<div class="dm-auth-title">Connect to OpenAI</div>',
+                unsafe_allow_html=True,
+            )
+
+            st.markdown(
+                """
+<div class="dm-auth-copy">
+  Enter your OpenAI API key and select a model to get started.
+  Your API key is kept only in this session and is not stored.
 </div>
 """,
-            unsafe_allow_html=True,
-        )
+                unsafe_allow_html=True,
+            )
 
-        # The inputs are deliberately outside the HTML card so Streamlit can
-        # handle them natively and securely.
-        api_key = st.text_input(
-            "OpenAI API Key",
-            type="password",
-            placeholder="sk-...",
-            label_visibility="visible",
-            key="connect_api_key",
-        )
+            api_key = st.text_input(
+                "OpenAI API Key",
+                type="password",
+                placeholder="sk-...",
+                label_visibility="visible",
+                key="connect_api_key",
+            )
 
-        model = st.selectbox(
-            "Select Model",
-            ["gpt-4o-mini", "gpt-4.1-mini", "gpt-4o"],
-            index=0,
-            key="connect_model",
-        )
+            model = st.selectbox(
+                "Select Model",
+                ["gpt-4o-mini", "gpt-4.1-mini", "gpt-4o"],
+                index=0,
+                key="connect_model",
+            )
 
-        st.caption("✓ Your key is secure and never stored on our servers.")
+            st.caption("✓ Your API key is secure and never stored on our servers.")
 
-        if st.button("⚡  Connect to OpenAI  →", use_container_width=True, type="primary"):
-            if not api_key.strip():
-                st.error("Please enter your OpenAI API key.")
-            else:
-                with st.spinner("Connecting securely..."):
-                    try:
-                        client = OpenAI(api_key=api_key.strip())
-                        client.models.list()
-                        st.session_state.api_key = api_key.strip()
-                        st.session_state.model = model
-                        st.session_state.client = client
-                        st.session_state.connected = True
-                        st.rerun()
-                    except Exception:
-                        st.error(
-                            "We couldn't connect with that API key. "
-                            "Please check the key and try again."
-                        )
+            if st.button(
+                "⚡  Connect to OpenAI  →",
+                use_container_width=True,
+                type="primary",
+            ):
+                if not api_key.strip():
+                    st.error("Please enter your OpenAI API key.")
+                else:
+                    with st.spinner("Connecting securely..."):
+                        try:
+                            client = OpenAI(api_key=api_key.strip())
+                            client.models.list()
+                            st.session_state.api_key = api_key.strip()
+                            st.session_state.model = model
+                            st.session_state.client = client
+                            st.session_state.connected = True
+                            st.rerun()
+                        except Exception:
+                            st.error(
+                                "We couldn't connect with that API key. "
+                                "Please check the key and try again."
+                            )
 
-        st.markdown(
-            """
-<div style="text-align:center;margin:16px 0 8px;color:#94a3b8;font-size:10px">
-  ──────────────── &nbsp; New to OpenAI? &nbsp; ────────────────
+            st.markdown(
+                """
+<div style="text-align:center;margin:10px 0 6px;color:#a3adbd;font-size:6px">
+  ──────── &nbsp; New to OpenAI? &nbsp; ────────
 </div>
 """,
-            unsafe_allow_html=True,
-        )
+                unsafe_allow_html=True,
+            )
 
-        st.link_button(
-            "Get your API key ↗",
-            "https://platform.openai.com/api-keys",
-            use_container_width=False,
-        )
+            st.link_button(
+                "Get your API key ↗",
+                "https://platform.openai.com/api-keys",
+            )
 
-        st.markdown(
-            """
+            st.markdown(
+                """
 <div class="dm-secure">
-  🔒 Secure Session Only &nbsp;&nbsp; ◉ Never Stored &nbsp;&nbsp; ✓ You Control Your Data
+  🔒 Secure Session Only &nbsp;•&nbsp; ◉ Never Stored &nbsp;•&nbsp; ✓ You Control Your Data
 </div>
 """,
-            unsafe_allow_html=True,
-        )
+                unsafe_allow_html=True,
+            )
 
     st.markdown("</div>", unsafe_allow_html=True)
 
