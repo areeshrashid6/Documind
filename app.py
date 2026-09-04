@@ -294,11 +294,33 @@ div[data-testid="stTextInput"] input:focus {
     box-shadow:0 20px 35px -8px rgba(79,70,229,.22);
 }
 
-.dm-doc-left { left:22%; top:62px; transform:rotate(-10deg); z-index:2; }
-.dm-doc-right { right:22%; top:62px; transform:rotate(10deg); z-index:2; }
+.dm-doc-left {
+    left:27%;
+    top:62px;
+    transform:rotate(-8deg);
+    z-index:2;
+}
 
-.dm-doc-far-left { left:8%; top:82px; transform:rotate(-17deg); z-index:1; }
-.dm-doc-far-right { right:8%; top:82px; transform:rotate(17deg); z-index:1; }
+.dm-doc-right {
+    right:27%;
+    top:62px;
+    transform:rotate(8deg);
+    z-index:2;
+}
+
+.dm-doc-far-left {
+    left:14%;
+    top:75px;
+    transform:rotate(-13deg);
+    z-index:1;
+}
+
+.dm-doc-far-right {
+    right:14%;
+    top:75px;
+    transform:rotate(13deg);
+    z-index:1;
+}
 
 .dm-tagline {
     position:absolute;
