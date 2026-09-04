@@ -1152,10 +1152,8 @@ def render_connection():
             unsafe_allow_html=True,
         )
 
-    with right:
-    st.markdown(
-        """ 
-        )
+    
+    
 <div class="dm-auth-card">
   <div class="dm-lock">♙</div>
   <div class="dm-auth-title">Connect to OpenAI</div>
