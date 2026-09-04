@@ -286,7 +286,7 @@ div[data-testid="stTextInput"] input:focus {
     top:12px;
     transform:translateX(-50%);
     width:100px;
-    height:80px;
+    height:115px;
     z-index:4;
     box-shadow:0 20px 35px -8px rgba(79,70,229,.22);
 }
