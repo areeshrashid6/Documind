@@ -370,7 +370,7 @@ div[data-testid="stTextInput"] input:focus {
     line-height:1.55;
     text-align:center;
     margin:0 auto 14px;
-    max-width:260px;
+    max-width:310px;
 }
 
 .dm-secure {
