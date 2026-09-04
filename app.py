@@ -198,7 +198,7 @@ div[data-testid="stTextInput"] input:focus {
     font-size:15px;
     line-height:1.75;
     max-width:620px;
-    margin-bottom:27px;
+    margin-bottom:18px;
 }
 
 .dm-badge {
@@ -220,7 +220,7 @@ div[data-testid="stTextInput"] input:focus {
     grid-template-columns:repeat(4,1fr);
     gap:10px;
     max-width:640px;
-    margin-bottom:28px;
+    margin-bottom:18px;
 }
 
 .dm-feature {
@@ -244,9 +244,9 @@ div[data-testid="stTextInput"] input:focus {
 
 .dm-showcase {
     position:relative;
-    height:245px;
+    height:190px;
     max-width:610px;
-    margin-top:8px;
+    margin-top:0;
 }
 
 .dm-arc {
@@ -262,7 +262,7 @@ div[data-testid="stTextInput"] input:focus {
 .dm-doc {
     position:absolute;
     width:105px;
-    height:145px;
+    height:120px;
     border-radius:12px;
     background:#fff;
     border:1px solid #e2e8f0;
@@ -286,10 +286,10 @@ div[data-testid="stTextInput"] input:focus {
 
 .dm-doc-center {
     left:50%;
-    top:30px;
+    top:20px;
     transform:translateX(-50%);
     width:110px;
-    height:155px;
+    height:130px;
     z-index:4;
     box-shadow:0 20px 35px -8px rgba(79,70,229,.22);
 }
@@ -622,7 +622,7 @@ div[data-testid="stTextInput"] input:focus {
 @media (max-width: 620px) {
     .block-container {
     max-width: 1440px;
-    padding: 0.5rem 1.4rem 2rem;
+    padding: 0.5rem 1.4rem 1rem;
 }
     .dm-auth-page { padding:18px; border-radius:22px; }
     .dm-hero-title { font-size:38px; letter-spacing:-1.8px; }
