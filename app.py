@@ -1031,7 +1031,6 @@ def render_connection():
       <div class="dm-brand-sub">Your documents. Now searchable with AI.</div>
     </div>
   </div>
-  <div class="dm-trust">♙ Secure &nbsp; • &nbsp; Private &nbsp; • &nbsp; Powered by OpenAI</div>
 </div>
 """,
         unsafe_allow_html=True,
@@ -1287,7 +1286,6 @@ def render_workspace():
       <div class="dm-workspace-sub">Your documents. Now searchable with AI.</div>
     </div>
   </div>
-  <div class="dm-workspace-trust">♙ Secure &nbsp; • &nbsp; Private &nbsp; • &nbsp; Powered by OpenAI</div>
 </div>
 """,
         unsafe_allow_html=True,
