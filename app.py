@@ -118,7 +118,7 @@ div[data-testid="stTextInput"] input:focus {
 
 .dm-auth-page {
     min-height: 82vh;
-     padding: 12px 42px 38px;
+    padding: 28px 42px 38px;
     border: 1px solid rgba(255,255,255,.85);
     border-radius: 30px;
     background:
@@ -612,7 +612,6 @@ div[data-testid="stTextInput"] input:focus {
 }
 
 @media (max-width: 900px) {
-    .dm-auth-page { padding:22px; }
     .dm-topbar { margin-bottom:25px; }
     .dm-trust { display:none; }
     .dm-features { grid-template-columns:repeat(2,1fr); }
@@ -621,7 +620,10 @@ div[data-testid="stTextInput"] input:focus {
 }
 
 @media (max-width: 620px) {
-    .block-container { padding: .6rem .7rem 1.2rem; }
+    .block-container {
+    max-width: 1440px;
+    padding: 0.5rem 1.4rem 2rem;
+}
     .dm-auth-page { padding:18px; border-radius:22px; }
     .dm-hero-title { font-size:38px; letter-spacing:-1.8px; }
     .dm-features { grid-template-columns:repeat(2,1fr); }
@@ -1003,8 +1005,6 @@ def reset_workspace():
 # SCREEN 1 — CONNECTION / LANDING PAGE
 # ============================================================
 def render_connection():
-    st.markdown('<div class="dm-auth-page">', unsafe_allow_html=True)
-
     st.markdown(
         """
 <div class="dm-topbar">
