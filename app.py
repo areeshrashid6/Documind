@@ -342,6 +342,8 @@ div[data-testid="stTextInput"] input:focus {
     box-shadow:0 20px 40px -15px rgba(0,15,60,.08);
     max-width:430px;
     margin:0 auto;
+    position:relative;
+    top:-65px;
 }
 
 .dm-lock {
@@ -669,6 +671,16 @@ div[data-testid="stChatInput"] textarea::placeholder {
     .dm-center-title { font-size:28px; }
     .dm-workspace-trust { display:none; }
 }
+
+@media (min-width: 901px) {
+
+    /* Move the entire right-side connection section upward */
+    div[data-testid="column"]:has(.dm-auth-card) {
+        transform: translateY(-35px);
+    }
+
+}
+
 </style>
 """,
     unsafe_allow_html=True,
