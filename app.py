@@ -52,9 +52,22 @@ html, body, [class*="css"] {
 
 #MainMenu, footer, header { visibility: hidden; }
 
+[data-testid="stAppViewContainer"] {
+    padding-top: 0 !important;
+}
+
+[data-testid="stAppViewContainer"] > .main {
+    padding-top: 0 !important;
+}
+
+[data-testid="stMainBlockContainer"] {
+    padding-top: 0.2rem !important;
+}
+
 .block-container {
     max-width: 1440px;
-    padding: 1.25rem 1.4rem 2rem;
+    padding: 0.2rem 1.4rem 2rem;
+    margin-top: 0 !important;
 }
 
 section[data-testid="stSidebar"] {
@@ -105,7 +118,7 @@ div[data-testid="stTextInput"] input:focus {
 
 .dm-auth-page {
     min-height: 82vh;
-    padding: 28px 42px 38px;
+     padding: 12px 42px 38px;
     border: 1px solid rgba(255,255,255,.85);
     border-radius: 30px;
     background:
